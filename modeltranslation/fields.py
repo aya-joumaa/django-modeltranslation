@@ -218,7 +218,7 @@ class TranslationField:
             if hasattr(self.remote_field.model._meta, "_related_objects_cache"):
                 del self.remote_field.model._meta._related_objects_cache
 
-        elif self.remote_field and not self.remote_field.hidden():
+        elif self.remote_field and not self.remote_field.hidden:
             current = self.remote_field.get_accessor_name()
             # Since fields cannot share the same rel object:
             self.remote_field = copy.copy(self.remote_field)
