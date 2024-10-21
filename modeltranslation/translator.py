@@ -599,7 +599,7 @@ class Translator:
                 setattr(model, field.get_attname(), desc)
 
                 # Set related field names on other model
-                if not field.remote_field.is_hidden():
+                if not field.remote_field.hidden:
                     other_opts = self._get_options_for_model(field.remote_field.model)
                     other_opts.related = True
                     other_opts.related_fields.append(field.related_query_name())
